@@ -6,7 +6,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the trained model
-model = joblib.load("../Shahul_Hameed_Project/models/flaky_model.pkl")
+#model = joblib.load("../Shahul_Hameed_Project/models/flaky_model.pkl")
 
 @app.route('/')
 def home():
