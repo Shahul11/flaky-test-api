@@ -1,11 +1,11 @@
-# src/evaluate_model.py
+# src/Shahul_Flaky_Test_evaluate_model.py
 
 from sklearn.metrics import classification_report, confusion_matrix
 import shap
 import joblib
 from sklearn.preprocessing import LabelEncoder
 
-from preprocess import preprocess_data
+from Shahul_Flaky_Test_preprocess import preprocess_data
 
 def evaluate_model(csv_path, model_path='../models/flaky_model.pkl'):
     df = preprocess_data(csv_path)

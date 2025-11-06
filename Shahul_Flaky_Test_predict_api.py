@@ -2,11 +2,15 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
 # Load the trained model
-#model = joblib.load("../Shahul_Hameed_Project/models/flaky_model.pkl")
+# model = joblib.load("../Shahul_Hameed_Project/models/flaky_model.pkl")
+
+model_path = os.path.join(os.path.dirname(__file__), "models", "flaky_model.pkl")
+model = joblib.load(model_path)
 
 @app.route('/')
 def home():
@@ -57,5 +61,10 @@ def predict():
     })
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run(host="0.0.0.0", port=7860)
+    app.run(debug=True)
+    # app.run(host="0.0.0.0", port=7860)
+
+
+# if __name__ == "__main__":
+#     port = int(os.environ.get("PORT", 7860))  # <-- use HF's dynamic port if provided
+#     app.run(host="0.0.0.0", port=port)

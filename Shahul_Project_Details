@@ -1,0 +1,49 @@
+🧪 Project Title: Flaky Test Prediction System for CI/CD Pipelines
+👨‍💻 Author: Shahul
+🗓️ Date: October 2025
+🧰 Tools Used: Python, pandas, scikit-learn, PyCharm
+
+📌 Objective
+The goal of this project is to build a machine learning model that predicts whether a test case is flaky — meaning it fails intermittently — based on historical test execution data. Flaky tests disrupt CI/CD pipelines by causing false alarms, unnecessary reruns, and reduced trust in automation.
+
+📁 Dataset
+A synthetic dataset was created to simulate real-world test logs. Each row represents a test execution and includes:
+- TestName: Unique test identifier
+- Status: Pass or fail
+- Duration_ms: Execution time
+- OS, Browser: Environment details
+- Timestamp: When the test ran
+- ErrorMessage: Failure reason (if any)
+- FlakyLabel: Manual label (0 = stable, 1 = flaky)
+
+🧹 Data Preprocessing
+Key preprocessing steps included:
+- Cleaning nulls and standardizing status labels
+- Feature engineering:
+- Failure rate per test
+- Variance in duration
+- Time-of-day patterns
+- Environment volatility (OS + browser diversity)
+- Heuristic labeling: A test was marked flaky if it failed >30% of the time but also passed occasionally
+
+🧠 Model Building
+A Random Forest Classifier was trained to predict flaky tests. Categorical features like TestName and TimeOfDay were encoded using LabelEncoder.
+Features Used:
+- TestNameEncoded: Encoded test identifier
+- FailureRate: % of times test failed
+- DurationVariance: Std deviation of test duration
+- EnvVolatility: Count of unique OS/browser combos
+- TimeOfDayEncoded: Encoded time bucket (Morning, Afternoon, etc.)
+The dataset was split 70/30 for training and testing.
+
+📊 Evaluation
+Model performance was evaluated using:
+- Precision, Recall, F1-score (with focus on flaky class)
+- Confusion matrix to analyze false positives
+- SHAP plots to visualize feature importance
+The Random Forest model showed strong performance, with FailureRate and DurationVariance emerging as key predictors.
+
+✅ Conclusion
+This project demonstrates how machine learning can proactively identify flaky tests and improve software quality. It combines data engineering, model development, and practical deployment — making it a strong candidate for real-world QA automation and DevOps workflows.
+
+

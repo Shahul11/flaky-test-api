@@ -45,20 +45,20 @@ pip install -r requirements.txt
 ### 2. Train the model
 
 ```bash
-python src/preprocess.py
-python src/train_model.py
+python src/Shahul_Flaky_Test_preprocess.py
+python src/Shahul_Flaky_Test_train_model.py
 ```
 
 ### 3. Evaluate the model
 
 ```bash
-python src/evaluate_model.py
+python src/Shahul_Flaky_Test_evaluate_model.py
 ```
 
 ### 4. Run the API
 
 ```bash
-python src/predict_api.py
+python src/Shahul_Flaky_Test_predict_api.py
 ```
 
 ---

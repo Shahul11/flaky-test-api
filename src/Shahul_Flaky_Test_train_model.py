@@ -1,12 +1,12 @@
-# src/train_model.py
+# src/Shahul_Flaky_Test_train_model.py
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import joblib
-from preprocess import preprocess_data
+from Shahul_Flaky_Test_preprocess import preprocess_data
 
-def train_model(csv_path, model_path='models/flaky_model.pkl'):
+def train_model(csv_path, model_path):
     df = preprocess_data(csv_path)
 
     # Encode categorical features
